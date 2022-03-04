@@ -4,20 +4,14 @@ Some util scripts for docker
 
 ## Installation
 
-Symlink the files in [.local/bin](.local/bin) somewhere in your "PATH" (Assume ~/.local/bin)
-
 ```shell
-for f in .local/bin/*; do
-  ln -sfT "$PWD/$f" "$HOME/.local/bin/`basename "$f" .sh`"
-done
+./bin/install-to-home-local-bin.sh
 ```
 
-## copy_from_docker_image
+## Commands
 
-Copy a folder from a docker image to a local folder
-
-All files are removed on local folder
+### copy-from-docker-image
 
 ```shell
-copy_from_docker_image %image% /path/in/image relative/local/path
-````
+copy-from-docker-image %image% /path/in/image relative/local/path
+```

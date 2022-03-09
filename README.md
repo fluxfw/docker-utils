@@ -15,3 +15,9 @@ Some util scripts for docker
 ```shell
 copy-from-docker-image %image% /path/in/image relative/local/path
 ```
+
+### run-in-docker
+
+```shell
+run-in-docker %image% %entrypoint% ...
+```

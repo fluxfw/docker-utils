@@ -26,4 +26,4 @@ fi
 
 mkdir -p "`dirname "$local_path"`"
 
-docker run --rm -it -u `id -u`:`id -g` -v "$PWD":/copy-from-docker-image-host -w /copy-from-docker-image-host --entrypoint cp "$(echo -e "FROM alpine:latest\nCOPY --from=\"$image\" \"$path_in_image\" /copy-from-docker-image" | docker build - --pull | awk '/Successfully built/{print $NF}')" -r /copy-from-docker-image "$local_path"
+run-in-docker "$(echo -e "FROM alpine:latest\nCOPY --from=\"$image\" \"$path_in_image\" /copy-from-docker-image" | docker build - --pull | awk '/Successfully built/{print $NF}')" cp -r /copy-from-docker-image "$local_path"

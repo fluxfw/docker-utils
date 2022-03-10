@@ -1,7 +1,7 @@
 {
-  "description": "Some util scripts for docker",
-  "topics": [
-    "docker"
-  ],
-  "homepage": "https://github.com/fluxapps/flux-docker-utils"
+    "description": "Some util scripts for docker",
+    "topics": [
+        "docker"
+    ],
+    "homepage": "https://github.com/fluxapps/flux-docker-utils"
 }

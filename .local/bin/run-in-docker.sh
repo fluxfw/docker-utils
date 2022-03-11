@@ -18,4 +18,4 @@ shift
 
 #docker pull "$image"
 
-docker run --rm -it -u `id -u`:`id -g` -v "$PWD":/code -w /code --entrypoint "$entrypoint" "$image" "$@"
+docker run --rm -it -u `id -u`:`id -g` -v "$PWD":/code -w /code $(printenv | grep "FLUX_" | cut -f1 -d= | sed 's/^/-e /') --entrypoint "$entrypoint" "$image" "$@"

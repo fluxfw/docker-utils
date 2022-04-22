@@ -2,6 +2,11 @@
 
 set -e
 
+if [ -z `command -v run-in-docker` ]; then
+    echo "Please install flux-docker-utils"
+    exit 1
+fi
+
 image="$1"
 if [ -z "$image" ]; then
     echo "Please pass an image"

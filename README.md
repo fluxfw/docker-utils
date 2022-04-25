@@ -16,12 +16,6 @@ Some util scripts for docker
 copy-from-docker-image %image% /path/in/image relative/local/path
 ```
 
-### install-project-to-home-local-bin
-
-```shell
-install-project-to-home-local-bin /path/to/project
-```
-
 ### run-in-docker
 
 ```shell

@@ -3,7 +3,8 @@
 set -e
 
 if [ -z `command -v install-project-to-home-local-bin` ]; then
-    "`dirname "$0"`/../.local/bin/install-project-to-home-local-bin.sh" "`dirname "$0"`/.."
-else
-    install-project-to-home-local-bin "`dirname "$0"`/.."
+    echo "Please install flux-shell-utils"
+    exit 1
 fi
+
+install-project-to-home-local-bin "`dirname "$0"`/.."

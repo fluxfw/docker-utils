@@ -16,7 +16,7 @@ if [ -z "$entrypoint" ]; then
 fi
 shift
 
-#docker pull "$image"
+folder="/code/`basename "$PWD"`"
 
-folder="`basename "$PWD"`"
-docker run --rm -it -u `id -u`:`id -g` -v "$PWD":"/code/$folder" -w "/code/$folder" $(printenv | grep "FLUX_" | cut -f1 -d= | sed 's/^/-e /') --entrypoint "$entrypoint" "$image" "$@"
+#docker pull "$image"
+docker run --rm -it -u `id -u`:`id -g` -v "$PWD":"$folder" -w "$folder" --entrypoint "$entrypoint" "$image" "$@"

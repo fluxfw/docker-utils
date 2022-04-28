@@ -26,5 +26,7 @@ fi
 
 mkdir -p "`dirname "$local_path"`"
 
+folder="/code/$local_path"
+
 echo "Copy $path_in_image from $image to $local_path"
-"$(dirname "`realpath "$0"`")/run-in-docker.sh" "$(echo -e "FROM alpine:latest\nCOPY --from=\"$image\" \"$path_in_image\" /copy-from-docker-image" | docker build - --pull | awk '/Successfully built/{print $NF}')" cp -r /copy-from-docker-image "$local_path"
+docker run --rm -it --network none -u `id -u`:`id -g` -v "$PWD/$local_path":"$folder" "$(echo -e "FROM alpine:latest\nCOPY --from=\"$image\" \"$path_in_image\" /copy-from-docker-image" | docker build - --pull | awk '/Successfully built/{print $NF}')" cp -r /copy-from-docker-image "$folder"

@@ -21,3 +21,9 @@ copy-from-docker-image %image% /path/in/image relative/local/path
 ```shell
 run-in-docker %image% %entrypoint% ...
 ```
+
+### run-static-webserver
+
+```shell
+run-static-webserver %listen_ip%
+```

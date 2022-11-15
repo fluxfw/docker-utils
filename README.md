@@ -10,6 +10,12 @@ Some util scripts for docker
 
 ## Commands
 
+### copy-docker-image
+
+```shell
+copy-docker-image %from_image% %to_image%
+```
+
 ### copy-from-docker-image
 
 ```shell

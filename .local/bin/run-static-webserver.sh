@@ -4,7 +4,7 @@ set -e
 
 listen_ip="$1"
 if [ -z "$listen_ip" ]; then
-    echo "Please pass a listen ip"
+    echo "Please pass a listen ip" >&2
     exit 1
 fi
 

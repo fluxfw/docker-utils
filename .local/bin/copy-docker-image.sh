@@ -4,13 +4,13 @@ set -e
 
 from_image="$1"
 if [ -z "$from_image" ]; then
-    echo "Please pass a from image"
+    echo "Please pass a from image" >&2
     exit 1
 fi
 
 to_image="$2"
 if [ -z "$to_image" ]; then
-    echo "Please pass a to image"
+    echo "Please pass a to image" >&2
     exit 1
 fi
 

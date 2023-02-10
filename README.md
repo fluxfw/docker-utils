@@ -19,7 +19,7 @@ copy-docker-image %from_image% %to_image%
 ### copy-from-docker-image
 
 ```shell
-copy-from-docker-image %image% /path/in/image relative/local/path
+copy-from-docker-image %image% /path/in/image /path/on/host
 ```
 
 ### run-in-docker

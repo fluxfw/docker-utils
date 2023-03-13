@@ -25,11 +25,11 @@ copy-from-docker-image %image% /path/in/image /path/on/host
 ### run-in-docker
 
 ```shell
-run-in-docker %image% %entrypoint% ...
+run-in-docker %image% %entrypoint% /path/to/folder ...
 ```
 
 ### run-static-webserver
 
 ```shell
-run-static-webserver %listen_ip%
+run-static-webserver /path/to/folder %listen_ip%
 ```

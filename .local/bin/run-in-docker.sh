@@ -16,7 +16,13 @@ if [ -z "$entrypoint" ]; then
 fi
 shift
 
-folder="/code/`basename "$PWD"`"
+path="$1"
+if [ -z "$path" ]; then
+    echo "Please pass a path" >&2
+    exit 1
+fi
+shift
 
-#docker pull "$image"
-docker run --rm -it -u "`id -u`":"`id -g`" -v "$PWD":"$folder" -w "$folder" --entrypoint "$entrypoint" "$image" "$@"
+path_volume="/code/`basename "$path"`"
+
+docker run --rm -it -u "`id -u`":"`id -g`" -v "$path":"$path_volume" -w "$path_volume" --entrypoint "$entrypoint" "$image" "$@"

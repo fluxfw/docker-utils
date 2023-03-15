@@ -23,6 +23,7 @@ if [ -z "$path" ]; then
 fi
 shift
 
-path_volume="/code/`basename "$path"`"
+path_host="`realpath "$path"`"
+path_volume="/code/`basename "$path_host"`"
 
-docker run --rm -it -u "`id -u`":"`id -g`" -v "$path":"$path_volume" -w "$path_volume" --entrypoint "$entrypoint" "$image" "$@"
+docker run --rm -it -u "`id -u`":"`id -g`" -v "$path_host":"$path_volume" -w "$path_volume" --entrypoint "$entrypoint" "$image" "$@"

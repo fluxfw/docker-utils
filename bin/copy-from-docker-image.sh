@@ -19,7 +19,7 @@ if [ -z "$path" ]; then
     echo "Please pass a path!" >&2
     exit 1
 fi
-if [ -d "$path" ] || [ -f "$path" ]; then
+if [ -e "$path" ]; then
     echo "Please remove existing $path!" >&2
     exit 1
 fi

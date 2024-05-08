@@ -14,7 +14,7 @@ if [ -z "$listen_ip" ]; then
     exit 1
 fi
 
-image="flux-docker-utils-run-static-webserver:latest"
+image="docker-utils-run-static-webserver:latest"
 
 path_host="`realpath "$path"`"
 path_volume="/usr/share/nginx/html"

@@ -1,6 +1,4 @@
-# flux-docker-utils
-
-Some util scripts for docker
+# docker-utils
 
 ## Installation
 

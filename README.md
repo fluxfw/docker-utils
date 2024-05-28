@@ -2,30 +2,30 @@
 
 ## Installation
 
-Add the files in [bin/HOST_PATH](bin/HOST_PATH) to your PATH
+Add the files in [HOST_PATH](HOST_PATH) to your PATH
 
 ## Commands
 
-### copy-docker-image
+### docker-utils-copy-docker-image
 
 ```shell
-copy-docker-image %from_image% %to_image%
+docker-utils-copy-docker-image %from_image% %to_image%
 ```
 
-### copy-from-docker-image
+### docker-utils-copy-from-docker-image
 
 ```shell
-copy-from-docker-image %image% /path/in/image /path/on/host
+docker-utils-copy-from-docker-image %image% /path/in/image /path/on/host
 ```
 
-### run-in-docker
+### docker-utils-run-in-docker
 
 ```shell
-run-in-docker %image% %entrypoint% /path/to/folder ...
+docker-utils-run-in-docker %image% %entrypoint% /path/to/folder ...
 ```
 
-### run-static-webserver
+### docker-utils-run-static-webserver
 
 ```shell
-run-static-webserver /path/to/folder %listen_ip%
+docker-utils-run-static-webserver /path/to/folder %listen_ip%
 ```

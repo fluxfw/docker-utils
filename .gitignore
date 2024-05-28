@@ -1,5 +1,9 @@
 *
-!bin
-!bin/**
+!HOST_PATH
+!HOST_PATH/**
 !.gitignore
+!copy-docker-image.sh
+!copy-from-docker-image.sh
 !README.md
+!run-in-docker.sh
+!run-static-webserver.sh

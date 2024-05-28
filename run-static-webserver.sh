@@ -23,4 +23,4 @@ echo -e "FROM nginx:mainline-alpine\nRUN sed -i 's/}/application\/javascript mjs
 
 xdg-open "http://$listen_ip"
 
-docker run --rm -it -v "$path_host":"$path_volume" -p "$listen_ip:80:80" "$image"
+docker run --rm -it -v "$path_host:$path_volume" -p "$listen_ip:80:80" "$image"

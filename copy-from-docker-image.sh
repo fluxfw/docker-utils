@@ -24,11 +24,11 @@ if [ -e "$path" ]; then
     exit 1
 fi
 
-build_image="docker-utils-copy-from-docker-image"
+build_image=docker-utils-copy-from-docker-image
 build_tag="`date +%s`-$RANDOM"
 
 path_host="`realpath "$path"`"
-path_volume="/host"
+path_volume=/host
 
 echo "Copy $path_in_image from $image to $path_host"
 

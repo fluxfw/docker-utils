@@ -2,8 +2,14 @@
 !HOST_PATH
 !HOST_PATH/**
 !.gitignore
+!alpine-sh.sh
+!alpine-sh-as-root.sh
+!arch-sh.sh
+!arch-sh-as-root.sh
 !copy-docker-image.sh
 !copy-from-docker-image.sh
+!debian-sh.sh
+!debian-sh-as-root.sh
 !README.md
 !run-in-docker.sh
 !run-static-webserver.sh

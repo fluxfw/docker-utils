@@ -23,7 +23,14 @@ if [ -z "$path" ]; then
 fi
 shift
 
+as_root="$1"
+if [ "$as_root" != true ] && [ "$as_root" != false ]; then
+    echo "Please pass as-root!" >&2
+    exit 1
+fi
+shift
+
 path_host="`realpath "$path"`"
 path_volume="/host/`basename "$path_host"`"
 
-docker run --rm -it -u "`id -u`:`id -g`" -v "$path_host:$path_volume" -w "$path_volume" --entrypoint "$entrypoint" "$image" "$@"
+docker run --rm -it $(if [ "$as_root" = false ]; then echo -u "`id -u`:`id -g`"; fi) -v "$path_host:$path_volume" -w "$path_volume" --entrypoint "$entrypoint" "$image" "$@"

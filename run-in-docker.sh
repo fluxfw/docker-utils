@@ -4,28 +4,28 @@ set -e
 
 image="$1"
 if [ -z "$image" ]; then
-    echo "Please pass an image!" >&2
+    echo Please pass an image! >&2
     exit 1
 fi
 shift
 
 entrypoint="$1"
 if [ -z "$entrypoint" ]; then
-    echo "Please pass an entrypoint!" >&2
+    echo Please pass an entrypoint! >&2
     exit 1
 fi
 shift
 
 path="$1"
 if [ -z "$path" ]; then
-    echo "Please pass a path!" >&2
+    echo Please pass a path! >&2
     exit 1
 fi
 shift
 
 as_root="$1"
 if [ "$as_root" != true ] && [ "$as_root" != false ]; then
-    echo "Please pass as-root!" >&2
+    echo Please pass as-root! >&2
     exit 1
 fi
 shift

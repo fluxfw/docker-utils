@@ -4,19 +4,19 @@ set -e
 
 image="$1"
 if [ -z "$image" ]; then
-    echo "Please pass an image!" >&2
+    echo Please pass an image! >&2
     exit 1
 fi
 
 path_in_image="$2"
 if [ -z "$path_in_image" ]; then
-    echo "Please pass a path in image!" >&2
+    echo Please pass a path in image! >&2
     exit 1
 fi
 
 path="$3"
 if [ -z "$path" ]; then
-    echo "Please pass a path!" >&2
+    echo Please pass a path! >&2
     exit 1
 fi
 if [ -e "$path" ]; then

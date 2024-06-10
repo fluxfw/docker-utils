@@ -4,13 +4,13 @@ set -e
 
 path="$1"
 if [ -z "$path" ]; then
-    echo "Please pass a path!" >&2
+    echo Please pass a path! >&2
     exit 1
 fi
 
 listen_ip="$2"
 if [ -z "$listen_ip" ]; then
-    echo "Please pass a listen ip!" >&2
+    echo Please pass a listen ip! >&2
     exit 1
 fi
 

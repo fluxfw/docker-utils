@@ -1,1 +1,1 @@
-../run-static-webserver.sh
+../application/run-static-webserver.sh

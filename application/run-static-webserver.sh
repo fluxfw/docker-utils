@@ -19,7 +19,7 @@ image=docker-utils-run-static-webserver:latest
 path_host="`realpath "$path"`"
 path_volume=/usr/share/nginx/html
 
-echo -e "FROM nginx:mainline-alpine\nRUN sed -i 's/}/application\/javascript mjs;application\/manifest+json webmanifest;}/' /etc/nginx/mime.types" | docker build - --pull -t "$image"
+echo -e "FROM nginx:mainline-alpine\nRUN sed -i 's/}/application\/javascript mjs;application\/manifest+json webmanifest;}/' /etc/nginx/mime.types" | docker buildx build - --pull -t "$image"
 
 xdg-open "http://$listen_ip"
 

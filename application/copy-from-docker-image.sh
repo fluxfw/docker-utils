@@ -32,6 +32,6 @@ path_volume=/host
 
 echo "Copy $path_in_image from $image to $path_host"
 
-echo -e "FROM alpine:latest\nCOPY --from=\"$image\" \"$path_in_image\" /copy-from-docker-image" | docker build - -t "$build_image:$build_tag"
+echo -e "FROM alpine:latest\nCOPY --from=\"$image\" \"$path_in_image\" /copy-from-docker-image" | docker buildx build - -t "$build_image:$build_tag"
 
 docker run --rm -it --network none -u "`id -u`:`id -g`" -v "`dirname "$path_host"`:$path_volume" "$build_image:$build_tag" cp -r /copy-from-docker-image "$path_volume/`basename "$path_host"`"
